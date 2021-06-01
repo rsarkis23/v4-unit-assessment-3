@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import Header from './Components/Header'
 import BookList from './Components/BookList'
 import Shelf from './Components/Shelf'
@@ -18,6 +17,22 @@ class App extends Component {
     }
   }
 
+  addToShelf = (id) => {
+    let currentShelf = this.state.shelf.slice()
+    let addedTitle = ''
+    let addBook = this.state.books.filter(e => {
+      if (e.id === id) {
+        addedTitle = e.title
+        return addedTitle
+      } 
+    })
+    currentShelf.push(addedTitle)
+    console.log(addedTitle)
+    this.setState({
+      shelf: currentShelf
+    })
+
+  }
 
 
   render() {
@@ -26,8 +41,8 @@ class App extends Component {
         <Header />
 
         <div className='main__layout'>
-          <BookList books={this.state.books} />
-          <Shelf />
+          <BookList books={this.state.books} addToShelf={this.addToShelf} />
+          <Shelf shelf={ this.state.shelf }/>
         </div>
       </div>
     )

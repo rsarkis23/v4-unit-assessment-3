@@ -1,15 +1,20 @@
-import React, { Component } from 'react'
-import data from '../data'
+import React from 'react'
 
 
 function BookList(props) {
 
     const mappedBooks = props.books.map(e => {
-        <div key={e.id}>
-            <img src={e.img} width='200' height='250' alt={e.title}></img>
-            <p>{e.title}</p>
-            <p>{e.author}</p>
-        </div>
+        return (
+            <div key={e.id}>
+                <img 
+                src={e.img} 
+                width='200' height='250' alt={e.title}
+                onClick={ event => props.addToShelf(e.id) }></img>
+                <p>{e.title}</p>
+                <p>{e.author}</p>
+            </div>
+        )
+
     })
 
     return (
