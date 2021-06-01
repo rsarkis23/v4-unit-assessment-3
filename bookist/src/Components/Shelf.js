@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
-function Shelf(props) {
+function Shelf (props) {
 
     const mappedTitles = props.shelf.map(e => {
         return (
