@@ -9,20 +9,26 @@ import data from './data'
 
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
 
     this.state = {
-      books: data
+      books: data,
+      shelf: []
     }
   }
 
-  render(){
-  return (
+
+
+  render() {
+    return (
       <div className="App">
         <Header />
-        <BookList />
-        <Shelf />
+
+        <div className='main__layout'>
+          <BookList />
+          <Shelf />
+        </div>
       </div>
     )
   }
