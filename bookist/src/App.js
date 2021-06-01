@@ -34,6 +34,12 @@ class App extends Component {
 
   }
 
+  clearShelf = () => {
+    this.setState({
+      shelf: []
+    })
+  }
+
 
   render() {
     return (
@@ -42,7 +48,7 @@ class App extends Component {
 
         <div className='main__layout'>
           <BookList books={this.state.books} addToShelf={this.addToShelf} />
-          <Shelf shelf={ this.state.shelf }/>
+          <Shelf shelf={ this.state.shelf } clearShelf={ this.clearShelf }/>
         </div>
       </div>
     )

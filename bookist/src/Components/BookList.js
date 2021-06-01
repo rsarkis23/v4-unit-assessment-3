@@ -19,7 +19,7 @@ function BookList(props) {
 
     return (
         <span>
-            <h2>list</h2>
+            <h1>LIST</h1>
             <div className='book__list'>
                 {mappedBooks}
             </div>

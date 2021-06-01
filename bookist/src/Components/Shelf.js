@@ -6,7 +6,7 @@ function Shelf(props) {
     const mappedTitles = props.shelf.map(e => {
         return (
             <div key={e}>
-                <h2>{e}</h2>
+                <h3>{e}</h3>
             </div>
         )
     })
@@ -15,7 +15,8 @@ function Shelf(props) {
 
     return (
         <div>
-            <h2>shelf</h2>
+            <h1>SHELF</h1>
+            <button onClick={props.clearShelf}><h2>Clear Shelf</h2></button>
             { mappedTitles }
         </div>
     )
