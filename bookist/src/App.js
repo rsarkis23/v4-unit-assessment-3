@@ -26,7 +26,7 @@ class App extends Component {
         <Header />
 
         <div className='main__layout'>
-          <BookList />
+          <BookList books={this.state.books} />
           <Shelf />
         </div>
       </div>
