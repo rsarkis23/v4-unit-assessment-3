@@ -3,13 +3,14 @@ import './App.css'
 import Header from './Components/Header'
 import BookList from './Components/BookList'
 import Shelf from './Components/Shelf'
+import SearchBar from './Components/SearchBar'
 import data from './data'
 
 
 
 class App extends Component {
-  constructor(props) {
-    super(props)
+  constructor (props) {
+    super (props)
 
     this.state = {
       books: data,
@@ -45,6 +46,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <SearchBar />
 
         <div className='main__layout'>
           <BookList books={this.state.books} addToShelf={this.addToShelf} />
